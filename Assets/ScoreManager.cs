@@ -13,6 +13,8 @@ public class ScoreManager : MonoBehaviour
     public int vida;
     public Shader Selected;
     public Sprite prefabSprite;
+    public GeradorMatematico gerador;
+    public Sprite valor1;
 
     // Start is called before the first frame update
     void Start()
@@ -22,44 +24,42 @@ public class ScoreManager : MonoBehaviour
         vida = 20;
         UpdateHudText();
         InvokeRepeating("SpawnObject", 0f, 6.0f);
+        gerador = new GeradorMatematico();
     }
 
     //Update do antigo MouseManager Script agora com lista de objetos para seleçao
-  
 
-    public void AddScore(){
+
+    public void AddScore()
+    {
         score++;
         UpdateHudText();
     }
 
-    public void LoseLife(){
+    public void LoseLife()
+    {
         vida--;
         UpdateHudText();
     }
 
-    public void UpdateHudText(){
+    public void removeProblema(GameObject go)
+    {
+        EquationList.Remove(go);
+        Destroy(go);
+    }
+
+    public void UpdateHudText()
+    {
         ScoreText.text = $"Vida: {vida}\nPontos: {score}";
     }
 
-    public void SpawnObject(){
-
+    public void SpawnObject()
+    {
         var randomLocation = new Vector3(Random.Range(-260f, 261f), Random.Range(0f, 30f), 0);
-        EquationList.Add(Instantiate(Prefab,randomLocation,Quaternion.identity));
-
-        //obj.transform.position = new Vector3(Random.Range(-260f,261f),Random.Range(0f,30f),0); //x: -260˜260 // y: 0˜100
-        /*Debug.Log("hmm");
-        Debug.Log(obj.GetComponent<Sprite>());
-        Debug.Log(obj.GetComponent<SpriteRenderer>());*/
+        EquationList.Add(Instantiate(Prefab, randomLocation, Quaternion.identity));
     }
 
     private void Update()
     {
-        foreach(GameObject x in EquationList)
-        {
-            if (x == null)
-            {
-                EquationList.Remove(x);
-            }
-        }
     }
 }

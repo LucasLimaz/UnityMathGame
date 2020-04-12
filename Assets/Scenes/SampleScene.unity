@@ -1153,6 +1153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScoreText: {fileID: 134681708}
   Prefab: {fileID: 5719833345724868605, guid: 799439959c7d94140803fef7d28a05b8, type: 3}
+  EquationList: []
   Position: {x: 0, y: 0, z: 0}
   score: 0
   vida: 0
@@ -1201,6 +1202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4097209bab98544820adca4339df34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ScoreManagerObject: {fileID: 836431221}
   sprite1: {fileID: 21300000, guid: 0d12c75c9f900a1439a98d14584f72f3, type: 3}
   sprite2: {fileID: 21300000, guid: b85bbd1ea60095545888d84452ed4f7d, type: 3}
   selectedObject: {fileID: 0}

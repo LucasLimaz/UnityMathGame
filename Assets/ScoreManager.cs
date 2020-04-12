@@ -7,6 +7,7 @@ public class ScoreManager : MonoBehaviour
 {
     public Text ScoreText;
     public GameObject Prefab;
+    public List<GameObject> EquationList;
     public Vector3 Position;
     public int score;
     public int vida;
@@ -16,11 +17,15 @@ public class ScoreManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        EquationList = new List<GameObject>();
         score = 0;
         vida = 20;
         UpdateHudText();
-        InvokeRepeating("SpawnObject", 4.0f, 6.0f);
+        InvokeRepeating("SpawnObject", 0f, 6.0f);
     }
+
+    //Update do antigo MouseManager Script agora com lista de objetos para seleçao
+  
 
     public void AddScore(){
         score++;
@@ -37,17 +42,24 @@ public class ScoreManager : MonoBehaviour
     }
 
     public void SpawnObject(){
-        var obj = Instantiate(Prefab);
 
-        obj.transform.position = new Vector3(Random.Range(-260f,261f),Random.Range(0f,30f),0); //x: -260˜260 // y: 0˜100
-        Debug.Log("hmm");
+        var randomLocation = new Vector3(Random.Range(-260f, 261f), Random.Range(0f, 30f), 0);
+        EquationList.Add(Instantiate(Prefab,randomLocation,Quaternion.identity));
+
+        //obj.transform.position = new Vector3(Random.Range(-260f,261f),Random.Range(0f,30f),0); //x: -260˜260 // y: 0˜100
+        /*Debug.Log("hmm");
         Debug.Log(obj.GetComponent<Sprite>());
-        Debug.Log(obj.GetComponent<SpriteRenderer>());
+        Debug.Log(obj.GetComponent<SpriteRenderer>());*/
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        foreach(GameObject x in EquationList)
+        {
+            if (x == null)
+            {
+                EquationList.Remove(x);
+            }
+        }
     }
 }

@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\MudarTxtBotao.cs" />
     <Compile Include="Assets\ScoreManager.cs" />
     <Compile Include="Assets\Scripts\Cair.cs" />
     <Compile Include="Assets\Scripts\CollisionDetect.cs" />

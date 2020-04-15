@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 8921888120865767072}
   m_Layer: 0
   m_Name: 2_T
-  m_TagString: Untagged
+  m_TagString: valor1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 8921888121008606493}
   m_Layer: 0
   m_Name: '%_T'
-  m_TagString: Untagged
+  m_TagString: operacao
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 8921888121648534967}
   m_Layer: 0
   m_Name: 3_T
-  m_TagString: Untagged
+  m_TagString: valor2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

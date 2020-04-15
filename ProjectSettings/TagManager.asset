@@ -6,6 +6,10 @@ TagManager:
   tags:
   - CanClick
   - floor
+  - valor1
+  - operacao
+  - equacao
+  - valor2
   layers:
   - Default
   - TransparentFX
@@ -15,7 +19,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - background
   - 
   - 
   - 
@@ -40,6 +44,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 516405295
+    locked: 1
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Equacao
+    uniqueID: 3626259225
+    locked: 1

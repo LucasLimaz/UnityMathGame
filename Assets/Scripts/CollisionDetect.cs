@@ -27,7 +27,7 @@ public class CollisionDetect : MonoBehaviour
             Debug.Log("OnCollisionEnter2D");
             var manager = GameObject.FindObjectOfType<ScoreManager>();
             manager.LoseLife();
-            manager.removeProblema(transform.parent.gameObject);
+            Destroy(transform.parent.gameObject);
         }
         
     }
